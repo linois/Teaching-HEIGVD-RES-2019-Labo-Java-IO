@@ -123,7 +123,6 @@ public class Application implements IApplication {
    * @throws IOException 
    */
   void storeQuote(Quote quote, String filename) throws IOException {
-    //throw new UnsupportedOperationException("The student has not implemented this method yet.");
     String path = WORKSPACE_DIRECTORY+"/";
 
     for(String tag : quote.getTags()){
