@@ -20,15 +20,14 @@ public class DFSFileExplorer implements IFileExplorer {
     //throw new UnsupportedOperationException("The student has not implemented this method yet.");
 
     File[] dfs = rootDirectory.listFiles();
-    //Si l'arbo n'est pas null on trie
     if(dfs != null){
       Arrays.sort(dfs);
     }
 
     if(dfs == null){
       vistor.visit(rootDirectory);
-    }else{
-      //Sinon on parcourt chaque élément de l'arbo en appelant récursivement explore
+    }
+    else{
       vistor.visit(rootDirectory);
       for (File file : dfs){
 
@@ -36,8 +35,8 @@ public class DFSFileExplorer implements IFileExplorer {
           if(file.isDirectory()){
             explore(file,vistor);
           }
-          //On lit les fichiers
-        } else {
+        }
+        else {
           vistor.visit(file);
         }
       }
